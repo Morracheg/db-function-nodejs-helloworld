@@ -2,8 +2,15 @@ const _name = "ivan"
 const _password = "12345678"
 const file_name = "users.csv"
 
+
 const fs = require('fs');
+
+
+
 const child_process = require('child_process');
+
+
+
 
 const server = http.createServer((req, res) => {
     //console.log(req.url, req.method, req.param);
@@ -22,8 +29,8 @@ const server = http.createServer((req, res) => {
         //console.log(data.toString());
         res.end(data.toString());
     });
-
-  } else if(req.url=="/")
+    
+  } else if(req.url=="/") 
       res.end('<form method="get">              \
                     <input name="login">        \
                     <input name="password">     \
@@ -35,11 +42,6 @@ const server = http.createServer((req, res) => {
       }
 });
 
-function main(args) {
-    let name = args.name || 'stranger'
-    let greeting = 'Hello ' + name + '!'
-    console.log(greeting)
-    return {"body": greeting}
-  }
-
-exports.main = main
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
